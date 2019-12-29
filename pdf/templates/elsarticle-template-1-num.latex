@@ -88,8 +88,6 @@
 
 \biboptions{semicolon,round}
 
-\journal{$if(journal)$$journal$$else$Cortex$endif$}
-
 \begin{document}
 
 \begin{frontmatter}
@@ -209,8 +207,6 @@ $body$
 
 %% References with bibTeX database:
 
-\bibliographystyle{elsarticle-harv}
-\bibliography{$bibliography$}
 
 %% Authors are advised to submit their bibtex database files. They are
 %% requested to list a bibtex style file in the manuscript if they do

@@ -3,11 +3,9 @@ title:  'Trabajo 1'
 author:
 - name: Javier Garcia Parra
   footnote: 50201633Q / jgarcia1285
-keyword:
-  - latex
-  - markdown
 abstract: |
-  Este es el primer trabajo de la asignatura Herramientas informáticas para las matemáticas del grado en matemáticas de la UNED.
+  Este es el primer trabajo de la asignatura 'Herramientas informáticas para las matemáticas' del 
+  grado en matemáticas de la UNED, curso 2019/20.
 ...
 
 # Introducción
@@ -33,20 +31,23 @@ gráficamente para 4 valores de v pertenece a  [55,220] . Con A 500, c 0.2777 y 
 inferior a -14 grados. Calcular, si A 500 y c 0.2777, la velocidad inicial v mínima con la
 que debe iniciar la maniobra de aterrizaje el avión para cumplir esa condición.  
 1.4) Calcular la posición vertical del avión si éste avanzara hacia una pista infinitamente larga.*  
-
+  
+  
 Para la ejecución del código, arrancar el intérprete de comandos de maxima y ejecutar:
 ```
 load("maxima.mac");
 ```
 Tras un tiempo, que puede alcanzar varios minutos, se alcanzan las soluciones. El propio script 
-muestra el apartado de la respuesta en el que se encuentra.
+muestra el apartado de la respuesta en el que se encuentra.  
 Cabe mencionar que para el cálculo del punto de la trayectoria, se ha tomado como origen de la maniobra de
 descenso el punto en el que el avión ha descendido 10 m (y=490) (siguiendo el mismo criterio del apartado 1.5, en el que 
-se considera el contacto con la pista en y = 10.
+se considera el contacto con la pista en y = 10.  
 Una vez finalizada la ejecución, se debería ver el gráfico pedido en el apartado 1.2. Opcionalmente se puede
-visualizar la primera y segunda derivada (empleando la función ```plot_inclinacion()```)
+visualizar la primera y segunda derivada (empleando la función ```plot_inclinacion()```).  
+Para la aproximación de valores de la función se ha probado con los algoritmos de optimización vistos en el curso, pero
+finalmente se ha optado por emplear la función ```solve()``` nativa.
 
-## Apartados a resolver con Scilab
+## Apartados a resolver con Scilab  
 *1.5) Calcular, con A 500, c 0.2777 y v
 150 , el valor aproximado de x donde el avión
 contacta con la pista, si se sabe que esto ocurre cuando y 10. Y comprobarlo gráficamente.*
@@ -63,7 +64,9 @@ nueva ventana.
  velocidad que tenía el avión al iniciar la maniobra de aterrizaje.  
  1.7) Calcular, en las tres situaciones del apartado 1.6, el tiempo que necesita el avión para
  frenar completamente (velocidad nula) y la distancia recorrida en la pista.*   
-  
-Desde Scilab ejecutar el script ``scilab_6_7.sce``.
+    
+    
+Desde Scilab ejecutar el script ``scilab_6_7.sce``. Previamente se ha debido ejecutar el script del apartado 1.5, 
+parte de cuyos resultados son necesarios aquí.  
 La solución debería aparecer en la consola y el gráfico con la comprobación gráfica debería abrirse en una 
 nueva ventana.

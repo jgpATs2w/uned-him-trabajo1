@@ -57,8 +57,6 @@ $endif$
 %% main text
 $body$
 
-\bibliography{$bibliography$}
-
 $if(acknowledgements)$
 \section*{Acknowledgements}
 $acknowledgements$

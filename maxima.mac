@@ -2,6 +2,9 @@ A:500$
 c:0.2777$
 y(A,c,v0,x):=A*%e^(-c*x/v0)/(1+%e^(-c*x/v0));
 
+/*Poner a true para saltar las llamadas a solve (para depurar)*/
+skipSolve:false$
+
 tangente(x,v0):=''(diff(y(A,c,v0,x),x));
 
 min_tan:tangente(0,55);
@@ -12,9 +15,9 @@ min_tan:tangente(0,200);
 min_inclinacion:bfloat(atan(min_tan)*180/%pi);
 printf(true,"(v0=200) tan: ~f, inclinacion: ~f~%", min_tan, min_inclinacion);
 
-printf(true,"1.1~%");
-x0:last(float(solve(490=y(A,c,55,x))));
-printf(true, ": ~a~%", -x0);
+printf(true,"1.1. Se va a llamar a solve(490=y(A,c,55,x), puede llevar varios minutos alcanzar la solución...~%");
+if not skipSolve then x0:last(float(solve(490=y(A,c,55,x))))$
+printf(true, "Punto mínima inclinación: (~a~%,250)", -x0);
 
 printf(true,"1.2~%");
 
@@ -30,8 +33,8 @@ plot_inclinacion():=plot2d(
 [legend,"inclinacion v0: 55","inclinacion v0: 200"]);
 
 printf(true,"1.3~%");
-min_v0:solve(-14=tangente(0,v0))$
-printf(true, "v0 minima para la maniobra: ~f~%", float(min_v0));
+if not skipSolve then min_v0:solve(-14=tangente(0,v0))$
+printf(true, "v0 minima para la maniobra: ~a~%", float(min_v0));
 
 printf(true,"1.4");
 pos_vertical:limit(tangente(x,200),x,inf);

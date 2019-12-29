@@ -11,16 +11,13 @@
 %%------------/AUTHORS--------------
 
 
-\keywords{
-latex,
-markdown,
-}
 %\keywords{Keyword1, Keyword2, Keyword3}
 
 \begin{abstract}
 %% Text of abstract
-Este es el primer trabajo de la asignatura Herramientas informáticas
-para las matemáticas del grado en matemáticas de la UNED.
+Este es el primer trabajo de la asignatura `Herramientas informáticas
+para las matemáticas' del grado en matemáticas de la UNED, curso
+2019/20.
 \end{abstract}
 
 
@@ -79,14 +76,18 @@ load("maxima.mac");
 
 Tras un tiempo, que puede alcanzar varios minutos, se alcanzan las
 soluciones. El propio script muestra el apartado de la respuesta en el
-que se encuentra. Cabe mencionar que para el cálculo del punto de la
-trayectoria, se ha tomado como origen de la maniobra de descenso el
-punto en el que el avión ha descendido 10 m (y=490) (siguiendo el mismo
-criterio del apartado 1.5, en el que se considera el contacto con la
-pista en y = 10. Una vez finalizada la ejecución, se debería ver el
-gráfico pedido en el apartado 1.2. Opcionalmente se puede visualizar la
-primera y segunda derivada (empleando la función
-\texttt{plot\_inclinacion()})
+que se encuentra.\\
+Cabe mencionar que para el cálculo del punto de la trayectoria, se ha
+tomado como origen de la maniobra de descenso el punto en el que el
+avión ha descendido 10 m (y=490) (siguiendo el mismo criterio del
+apartado 1.5, en el que se considera el contacto con la pista en y =
+10.\\
+Una vez finalizada la ejecución, se debería ver el gráfico pedido en el
+apartado 1.2. Opcionalmente se puede visualizar la primera y segunda
+derivada (empleando la función \texttt{plot\_inclinacion()}).\\
+Para la aproximación de valores de la función se ha probado con los
+algoritmos de optimización vistos en el curso, pero finalmente se ha
+optado por emplear la función \texttt{solve()} nativa.
 
 \subsection{Apartados a resolver con
 Scilab}\label{apartados-a-resolver-con-scilab}
@@ -105,19 +106,16 @@ en el instante de contactar con la pista y x es la posición de contacto
 calculada en el apartado anterior. Representar gráficamente la posición
 del avión en la pista en función del tiempo, si a 12, para 3 valores de
 v (50, 75, 100) es decir para tres valores de velocidad inferiores a la
-velocidad que tenía el avión al iniciar la maniobra de aterrizaje.
-Observación: Tenga en cuenta que la expresión (1.2) únicamente es cierta
-hasta que la 0, esto es, hasta que la velocidad del avión en la pista
-sea nula, es decir hasta que el avión se para.\\
+velocidad que tenía el avión al iniciar la maniobra de aterrizaje.\\
 1.7) Calcular, en las tres situaciones del apartado 1.6, el tiempo que
 necesita el avión para frenar completamente (velocidad nula) y la
 distancia recorrida en la pista.}
 
-Desde Scilab ejecutar el script \texttt{scilab\_6\_7.sce}. La solución
-debería aparecer en la consola y el gráfico con la comprobación gráfica
-debería abrirse en una nueva ventana.
-
-\bibliography{}
+Desde Scilab ejecutar el script \texttt{scilab\_6\_7.sce}. Previamente
+se ha debido ejecutar el script del apartado 1.5, parte de cuyos
+resultados son necesarios aquí.\\
+La solución debería aparecer en la consola y el gráfico con la
+comprobación gráfica debería abrirse en una nueva ventana.
 
 
 
