@@ -4,34 +4,6 @@ y(A,c,v0,x):=A*%e^(-c*x/v0)/(1+%e^(-c*x/v0));
 
 tangente(x,v0):=''(diff(y(A,c,v0,x),x));
 
-biseccion(f,a,b,niteraciones,precision):=block(n:0,x0:a,x1:b,
-    while (n<niteraciones and abs(x1-x0)>precision)
-        do (
-            n:n+1,x2:(x0+x1)/2,
-            if ev(f,x=x2)=0 then
-                return(float(x2))
-            else
-                if(ev(f,x=x2)*ev(f,x=x0)<0) then x1:x2 else x0:x2),
-    float(x2)
-);
-reglafalsa(f,a,b,niteraciones,tolerancia):=block(n:0,x0:a,x1:b,x2:x0,
-     while (n<niteraciones and abs(ev(f,x=x2))>tolerancia)
-         do (n:n+1,disp(float([x0,x1])),x2:(x0*ev(f,x=x1)-x1*ev(f,x=x0))/(ev(f,x=x1)-ev(f,x=x0)),
-     if(ev(f,x=x2)*ev(f,x=x0)<0) then x1:x2 else x0:x2),
-     float(x2)
- );
-/* TODO reuse
-inclinacion(y):=block(
-    diffy(x):=diff(y(x),x),
-    min_tan: biseccion(diffy(x), -1, 1, 50, 0.001),
-    min_inclinacion:bfloat(atan(min_tan)*180/%pi),
-    return(min_inclinacion)
-);
-
-TODO fix min calculation
-min_tan: reglafalsa(tangente(x,55), -1, 1, 50, 0.001);
-min_tan: reglafalsa(tangente(x,200), -1, 1, 50, 0.001);
-*/
 min_tan:tangente(0,55);
 min_inclinacion:bfloat(atan(min_tan)*180/%pi);
 printf(true,"(v0=55) tan: ~f, inclinacion: ~f~%", min_tan, min_inclinacion);
